@@ -23,7 +23,7 @@ func main() {
 Build and run:
 
 ```shell
- $ go build -o hello_world
- $ ./hello_world
- Hello world
+$ go build -o hello_world
+$ ./hello_world
+Hello world
 ```
