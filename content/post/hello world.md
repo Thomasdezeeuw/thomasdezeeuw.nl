@@ -27,3 +27,6 @@ $ go build -o hello_world
 $ ./hello_world
 Hello world
 ```
+
+I created a page for all kind of information about go called [go
+notes](/notes/go/).
