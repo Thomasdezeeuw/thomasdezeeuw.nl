@@ -1,0 +1,11 @@
+<!DOCTYPE html><html lang=en-us><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=author content="Thomas de Zeeuw"><meta name=generator content="Hugo 0.15-DEV"><title>Hello world &middot; Thomas de Zeeuw</title><link rel=stylesheet href=/css/style.css></head><body><nav class=main-nav><a href="/"><span class=arrow>←</span> Home</a> <a href=/notes/go>Go notes</a> <a href=https://github.com/thomasdezeeuw>GitHub page</a></nav><section id=wrapper><article class=post><header><h1>Hello world</h1><h2 class=headline>November 9, 2015</h2></header><section id=post-body><p>First post created with <a href=https://gohugo.io>Hugo</a>.</p><p>Since I like <a href=https://golang.org>go</a>, here is some go code.</p><pre><code class=language-go>package main
+
+import &quot;os&quot;
+
+func main() {
+	os.Stdout.WriteString(&quot;Hello world\n&quot;)
+}
+</code></pre><p>Build and run:</p><pre><code class=language-shell>$ go build -o hello_world
+$ ./hello_world
+Hello world
+</code></pre><p>I created a page for all kind of information about go called <a href="/notes/go/">go notes</a>.</p></section></article><footer id=footer><p class=small>© Copyright 2015 Thomas de Zeeuw</p></footer></section><script src=/js/script.js></script></body></html>
