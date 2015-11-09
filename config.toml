@@ -12,6 +12,12 @@ theme = "Cactus"
 
   # RSS feed.
   enableRSS = true
+  # Links in the header.
+  links = [
+  	["Go notes", "/notes/go"],
+  	["GitHub page", "https://github.com/thomasdezeeuw"],
+  ]
+
 
   # copyright message in the footer.
   copyright = "© Copyright 2015 Thomas de Zeeuw"
