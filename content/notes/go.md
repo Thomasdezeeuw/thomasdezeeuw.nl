@@ -1,8 +1,6 @@
 +++
 type = "page"
 title = "Go notes"
-
-draft = true
 +++
 
 This is a collection tricks, ideas and other fun stuff I've collected in my time
