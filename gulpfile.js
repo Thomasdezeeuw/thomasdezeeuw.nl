@@ -47,9 +47,12 @@ var paths = {
 			'./public/css/**/*.css',
 			'!./public/css/style.css'
 		],
-		html: [
+		other: [
 			'./public/page',
-			'./public/post'
+			'./public/post',
+			'./public/go/page',
+			'./public/go/index.html',
+			'./public/**/*.xml'
 		]
 	},
 	dst: {
@@ -124,7 +127,7 @@ gulp.task('build-style', function () {
 		.pipe(gulp.dest(paths.dst.style))
 })
 
-gulp.task('clean', ['clean-script', 'clean-style', 'clean-html'])
+gulp.task('clean', ['clean-script', 'clean-style', 'clean-other'])
 
 gulp.task('clean-script', function () {
 	return gulp.src(paths.remove.script)
@@ -136,8 +139,8 @@ gulp.task('clean-style', function () {
 		.pipe(rimraf())
 })
 
-gulp.task('clean-html', function () {
-	return gulp.src(paths.remove.html)
+gulp.task('clean-other', function () {
+	return gulp.src(paths.remove.other)
 		.pipe(rimraf())
 })
 
