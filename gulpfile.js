@@ -50,8 +50,8 @@ var paths = {
 		other: [
 			'./public/page',
 			'./public/post',
-			'./public/go/page',
-			'./public/go/index.html',
+			'./public/notes/page',
+			'./public/notes/index.html',
 			'./public/**/*.xml'
 		]
 	},
