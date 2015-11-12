@@ -1,7 +1,5 @@
 # TODO
 
-## Longer
-
 - [ ] Add cache invalidating.
 - [ ] Add opensource projects.
 - [ ] Add site index, for robots.
