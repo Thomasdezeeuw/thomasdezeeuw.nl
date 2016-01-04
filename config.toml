@@ -20,4 +20,4 @@ theme = "Cactus"
   enableRSS = false
 
   # copyright message in the footer.
-  copyright = "© Copyright 2015 Thomas de Zeeuw"
+  copyright = "© Copyright 2015-2016 Thomas de Zeeuw"
