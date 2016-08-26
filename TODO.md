@@ -1,8 +1,5 @@
 # TODO
 
-- [ ] Add cache invalidating.
+- [ ] Add cache invalidating, maybe at proxy level?
 - [ ] Add opensource projects.
-- [ ] Add site index, for robots.
-- [ ] Add RSS feed, for humans.
 - [ ] Create an archive page at /blog.
-- [ ] Add image compressor to gulp.
