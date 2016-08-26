@@ -4,6 +4,21 @@
   "description": "thomasdezeeuw.nl",
   "author": "Thomas de Zeeuw",
   "private": true,
+  "scripts": {
+    "build": "rm -rf public && npm run build-hugo && npm run clean && npm run build-script && npm run minify-html && npm run build-style",
+    "build-hugo": "hugo",
+    "clean": "rm -rf public/css public/js public/page public/post public/notes/page public/notes/index.html public/notes/index.xml",
+    "build-script": "mkdir -p public/js && cat src/js/*.js | uglifyjs - > public/js/script.js",
+    "minify-html": "html-minifier --input-dir public --output-dir public --html5 --file-ext html --collapse-boolean-attributes --collapse-whitespace --prevent-attributes-escaping --remove-comments --remove-empty-attributes --remove-redundant-attributes --remove-tag-whitespace --use-short-doctype",
+    "build-style": "mkdir -p public/css && npm run build-style-initial && npm run build-style-build",
+    "build-style-initial": "cat themes/cactus/static/css/normalize.css src/css/highlight.css themes/cactus/static/css/main.css > public/css/style.css",
+    "build-style-build": "cat public/css/style.css | ./node_modules/.bin/uncss --htmlroot public public/**/*.html | autoprefixer-cli --no-map | cleancss --s0 --output public/css/style.css"
+  },
   "dependencies": {
+    "autoprefixer-cli": "^1.0.0",
+    "clean-css": "^3.4.19",
+    "html-minifier": "^3.0.2",
+    "uglify-js": "^2.7.3",
+    "uncss": "^0.14.1"
   }
 }
