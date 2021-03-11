@@ -1,0 +1,11 @@
+<ul id="post-list">
+	{{ range .Paginator.Pages }}
+		{{ $url := replace .Permalink .Site.BaseURL "" }}
+		{{ if eq .Type "blog-post" }}
+			<li>
+				<a href='{{ $url }}'><aside class="dates">{{ .Date.Format "Jan 2" }}</aside></a>
+				<a href='{{ $url }}'>{{ .Title }} <h2>{{ .Description }}</h2></a>
+			</li>
+		{{ end }}
+	{{ end }}
+</ul>

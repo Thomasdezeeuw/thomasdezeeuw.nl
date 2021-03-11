@@ -1,0 +1,27 @@
+name = "Cactus-custom"
+license = "MIT"
+licenselink = "./License.md"
+description = "A minimalistic and responsive theme for bloggers."
+min_version = 0.14
+
+[author]
+  name = "Thomas de Zeeuw"
+  homepage = "https://thomasdezeeuw.nl"
+
+[[original]]
+  # Forked of the original Cactus theme.
+  name = "digitalcraftsman"
+  homepage = "//github.com/digitalcraftsman"
+  repo = "//github.com/digitalcraftsman/hugo-cactus-theme"
+
+[[original]]
+  # Ported the stardard theme of the Cactus for Mac static site generator to Jekyll
+  name = "Nick Balestra"
+  homepage = "//nick.balestra.ch/"
+  repo = "//github.com/nickbalestra/kactus"
+
+[[original]]
+  # Original creators of the stardard theme for the Cactus for Mac static site generator
+  name = "Cactus for Mac authors"
+  homepage = "//cactusformac.com"
+  repo = "github.com/koenbok/Cactus"

@@ -1,0 +1,14 @@
+<nav class="main-nav">
+	{{ $url := replace .Permalink .Site.BaseURL "" }}
+	{{ if ne $url "/" }}
+		<a href="/"><span class="arrow">←</span> Home</a>
+	{{ end }}
+
+	{{ range .Site.Params.links }}
+		<a href="{{index . 1 }}">{{index . 0 }}</a>
+	{{ end }}
+
+	{{ if .Site.Params.enableRSS }}
+		<a class="cta" href="/index.xml">Subscribe</a>
+	{{ end }}
+</nav>
