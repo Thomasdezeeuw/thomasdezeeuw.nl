@@ -3,6 +3,9 @@ languageCode = "en-us"
 title = "Thomas de Zeeuw"
 theme = "Cactus"
 
+disableHugoGeneratorInject = true
+disableKinds = [ "section", "taxonomy", "term", "RSS", "sitemap", "robotsTXT" ]
+
 [permalinks]
   post = "/blog/:year/:month/:day/:slug"
 

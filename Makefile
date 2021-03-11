@@ -2,6 +2,8 @@ build: build_pages build_css
 
 build_pages:
 	hugo
+	@# Remove some files we don't want.
+	rm -rf public/page
 
 # Build CSS.
 build_css: public/style.css
