@@ -3,7 +3,7 @@ type = "blog-post"
 title = "Hello world"
 date = "2015-11-09T01:28:49+01:00"
 slug = "hello-world"
-description = "My first post."
+description = "My first post"
 +++
 
 First post created with [Hugo](https://gohugo.io).
@@ -22,7 +22,7 @@ func main() {
 
 Build and run:
 
-```shell
+```bash
 $ go build -o hello_world
 $ ./hello_world
 Hello world

@@ -9,15 +9,24 @@ theme = "Cactus"
 [params]
   name = "Thomas de Zeeuw"
   bio = "Software enthusiast"
-
   # Links in the header.
   links = [
-  	["Go notes", "/notes/go"],
-  	["GitHub page", "https://github.com/thomasdezeeuw"],
+  	["GitHub page", "https://github.com/Thomasdezeeuw"],
+  	#["Go notes", "/notes/go"],
   ]
-
   # RSS feed link.
   enableRSS = false
-
   # Copyright message in the footer.
-  copyright = "© Copyright 2015-2016 Thomas de Zeeuw"
+  copyright = "© Copyright 2015-2021 Thomas de Zeeuw"
+
+[markup]
+  [markup.highlight]
+    anchorLineNos = true
+    codeFences = true
+    guessSyntax = false
+    lineNoStart = 1
+    lineNos = true
+    lineNumbersInTable = true
+    noClasses = false
+    style = "solarized-light"
+    tabWidth = 4
