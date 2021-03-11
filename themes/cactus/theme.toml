@@ -1,6 +1,6 @@
 name = "Cactus-custom"
 license = "MIT"
-licenselink = "./License.md"
+licenselink = "./LICENSE"
 description = "A minimalistic and responsive theme for bloggers."
 min_version = 0.14
 

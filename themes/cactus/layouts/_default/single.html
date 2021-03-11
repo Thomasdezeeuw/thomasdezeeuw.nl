@@ -1,24 +1,19 @@
-	{{ partial "head.html" . }}
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+{{ partial "head.html" . }}
 	<body>
-		{{ partial "nav.html" . }}
+{{ partial "nav.html" . }}
+		<article>
+			<h1>{{ .Title }}</h1>
+			{{ if eq .Type "blog-post" -}}
+			<time datetime="{{ .PublishDate.Format "2006-01-02" }}">
+				{{- .PublishDate.Format "January 2, 2006" -}}
+			</time>
+			{{- end }}
 
-		<section id="wrapper">
-			<article class="post">
-				<header>
-					<h1>{{ .Title }}</h1>
-					{{ if eq .Type "blog-post" }}
-						<h2 class="headline">{{ .Date.Format "January 2, 2006" }}</h2>
-					{{ end }}
-				</header>
+{{ .Content }}
+		</article>
 
-				<section id="post-body">
-					{{ .Content }}
-				</section>
-			</article>
-
-			{{ partial "footer.html" . }}
-		</section>
-
-		{{ partial "js.html" . }}
+{{ partial "footer.html" . }}
 	</body>
 </html>

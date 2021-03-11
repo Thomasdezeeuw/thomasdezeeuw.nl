@@ -1,11 +1,15 @@
-<ul id="post-list">
-	{{ range .Paginator.Pages }}
-		{{ $url := replace .Permalink .Site.BaseURL "" }}
-		{{ if eq .Type "blog-post" }}
-			<li>
-				<a href='{{ $url }}'><aside class="dates">{{ .Date.Format "Jan 2" }}</aside></a>
-				<a href='{{ $url }}'>{{ .Title }} <h2>{{ .Description }}</h2></a>
-			</li>
-		{{ end }}
-	{{ end }}
-</ul>
+			<ul id="post-list">
+				{{- range .Paginator.Pages -}}
+				{{ if eq .Type "blog-post" }}
+				<li>
+					<a href='{{ .RelPermalink }}'>
+						<time datetime="{{ .PublishDate.Format "2006-01-02" }}">
+							{{- .PublishDate.Format "Jan 2, 2006" -}}
+						</time>
+						<h1>{{ .Title }}</h1>
+						<p>{{ .Description }}</p>
+					</a>
+				</li>
+				{{- end }}
+				{{- end }}
+			</ul>

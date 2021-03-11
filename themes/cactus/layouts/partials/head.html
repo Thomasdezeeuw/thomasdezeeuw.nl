@@ -1,10 +1,9 @@
-<!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode }}">
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="author" content="{{ .Site.Params.name }}">
-		{{ .Hugo.Generator }}
+		{{ hugo.Generator }}
 		<title>{{ if ne .Title .Site.Title }}{{ .Title }} &middot; {{ end }}{{ .Site.Title }}</title>
+		<script src="/js/script.js" async></script>
 		<link rel="stylesheet" href="/css/style.css">
 	</head>

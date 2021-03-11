@@ -1,12 +1,13 @@
-	{{ partial "head.html" . }}
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+{{ partial "head.html" . }}
 	<body>
-	{{ partial "nav.html" . }}
+{{ partial "nav.html" . }}
+{{ partial "profile.html" . }}
+		<section class="home">
+{{ partial "post-list.html"  . }}
+		</section>
 
-	{{ partial "profile.html" . }}
-
-	<section id="wrapper" class="home">
-		{{ partial "post-list.html"  . }}
-		{{ partial "footer.html"     . }}
-	</section>
+{{ partial "footer.html" . }}
 	</body>
 </html>
