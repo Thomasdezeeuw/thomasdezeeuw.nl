@@ -1,4 +1,7 @@
-build: build_pages build_css
+build: clean build_pages build_css
+
+build_dev: build_css
+	hugo  --buildDrafts --buildFuture
 
 build_pages:
 	hugo
@@ -11,7 +14,10 @@ public/style.css: src/css/normalize.css src/css/highlight.css src/css/main.css
 	mkdir -p public/css
 	cat $^ > $@
 
+dev:
+	find content/ src/ static/ themes/ config.toml Makefile | entr -d $(MAKE) build_dev
+
 clean:
 	rm -rf public
 
-.PHONY: build build_pages build_css
+.PHONY: build build_dev build_pages build_css dev clean
