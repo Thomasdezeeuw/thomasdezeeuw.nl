@@ -61,6 +61,14 @@ a:active {
 	text-decoration: underline;
 }
 
+/* Inline code. */
+p code {
+	padding: 0 0.1em;
+	background-color: #F5F5F5;
+	border-radius: 3px;
+	font-family: 'Source Code Pro',SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
+}
+
 /* Center the first header of the page. */
 section h1:first-child, article h1:first-child {
 	letter-spacing: -1px;
