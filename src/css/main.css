@@ -7,15 +7,19 @@ caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,
 figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,
 audio,video {
 	border: 0;
-	font: inherit;
 	font-size: 100%;
 	margin: 0;
 	padding: 0;
 	vertical-align: baseline;
 }
 
+
 body {
 	line-height: 1;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+	color: #666;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
 }
 
 table {
@@ -27,6 +31,10 @@ table {
 	box-sizing: border-box;
 	moz-box-sizing: border-box;
 	webkit-box-sizing: border-box;
+}
+
+a {
+	transition: all 0.15s ease;
 }
 
 /* Clearfix */
@@ -41,7 +49,7 @@ table {
 }
 
 /* Spacing */
-.post h1, h3, h4, h5, p, .post-body ul, #post-list li, pre {
+.post h1, h3, h4, h5, p, .post-body ul {
 	margin-bottom: 20px;
 }
 
@@ -50,12 +58,6 @@ html, body {
 	height: 100%;
 }
 
-body {
-	font:16px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;
-	color: #666;
-	-webkit-font-smoothing: antialiased;
-	text-rendering: optimizeLegibility;
-}
 
 h1 {
 	font-size: 30px;
@@ -65,84 +67,8 @@ h1 {
 }
 
 h2 {
-	font: italic 19px/1.3em Georgia,serif;
+	font: italic 19px/1.3em;
 	color: #bbb;
-}
-
-.profile #wrapper {
-	padding: 100px 40px 0px;
-	max-width: 600px;
-	margin: 0 auto;
-}
-
-.profile #header {
-	border-bottom: 1px solid #eee;
-	margin-bottom: 40px;
-	padding-bottom: 40px;
-	text-align: center;
-	position: relative;
-}
-
-.profile #avatar {
-	display: inline-block;
-	width: 80px;
-	height: 80px;
-	border-radius: 50%;
-	margin-bottom: 20px;
-}
-
-.profile h1 {
-	font-weight: 400;
-	letter-spacing: 0px;
-	font-size: 20px;
-	color: #222;
-}
-
-.profile h2 {
-	font-size: 20px;
-	font-weight: 300;
-	color: #aaa;
-	margin-top: 10px;
-	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	font-style: normal;
-}
-
-nav.main-nav {
-	padding: 20px 20px 0;
-	background: #fff;
-	background: rgba(255,255,255,.90);
-	margin: 0 auto;
-	text-align: right;
-	z-index: 100;
-}
-
-nav.main-nav a {
-	top: 8px;
-	right: 6px;
-	padding: 8px 12px;
-	color: #5badf0;
-	font-size: 13px;
-	line-height: 1.35;
-	border-radius: 3px;
-
-}
-
-nav.main-nav a.cta {
-	background: #5badf0;
-	color: #fff;
-	margin-left: 12px;
-}
-
-#wrapper {
-	max-width: 600px;
-	margin: 0 auto;
-	padding: 60px 40px 40px 40px;
-}
-
-#wrapper.home {
-	max-width: 600px;
-	margin: 0 auto;
-	padding: 0px 40px 20px 40px;
 }
 
 .home #avatar {
@@ -156,8 +82,6 @@ nav.main-nav a.cta {
 /*Accent color*/
 a,
 #title,
-#post-list a:hover,
-#post-list li:hover .dates,
 #title:hover {
 	text-decoration: none;
 	color: #5badf0;
@@ -168,8 +92,7 @@ p a { color: #5694f1; }
 
 /*Transitions*/
 a,
-#post-nav a,
-#post-list a	{
+#post-nav a {
 	-webkit-transition: all 0.15s ease;
 	-moz-transition: all 0.15s ease;
 	-ms-transition: all 0.15s ease;
@@ -197,7 +120,7 @@ em, i { font-style: italic; }
 
 .description {
 	float: right;
-	font: italic 14px/1.4em Georgia,serif;
+	font: italic 14px/1.4em;
 	color: #aaa;
 }
 
@@ -209,7 +132,7 @@ em, i { font-style: italic; }
 }
 
 .home h2 {
-	font: italic 19px/1.3em Georgia,serif;
+	font: italic 19px/1.3em;
 	color: #bbb;
 }
 
@@ -220,30 +143,23 @@ em, i { font-style: italic; }
 .post h1 {
 	margin-bottom: 20px;
 	color: #222;
-	font: 300 32px/1.4em "Helvetica Neue", Helvetica,Arial,sans-serif;
+	font: 300 32px/1.4em;
 }
 
 .post h2 {
 	margin-bottom: 40px;
-	font: 300 24px/1.5 "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font: 300 24px/1.5;
 	color: #111;
 }
 
 .post h2.headline {
-	font: normal 13px/1.5em "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font: normal 13px/1.5em;
 	margin: -5px 0 40px 0;
 	color: #b2b9be;
 	font-size: 13px;
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	display: inline-block;
-}
-
-#post-list h2 {
-	font: normal 17px/1.5em "Helvetica Neue",Helvetica,Arial,sans-serif;
-	color: #aaa;
-	max-width: 400px;
-	margin-top: 2px;
 }
 
 h3, h4, h5 { color:#333; }
@@ -259,12 +175,6 @@ h6 {
 	margin-bottom: 6px;
 }
 
-p.small {
-	color: #bbb;
-	font-size: 14px;
-	line-height: 1.5;
-	display: block;
-}
 
 blockquote {
 	padding-left: 15px;
@@ -280,13 +190,11 @@ hr {
 }
 
 span.code {
-	font-family:Menlo, Monaco, Courier;
 	background-color:#EEE;
 	font-size:14px;
 }
 
 pre	{
-	font-family:Menlo, Monaco, Courier;
 	white-space:pre-wrap;
 	padding:20px;
 	background-color:#fdfdfd;
@@ -356,46 +264,6 @@ img {
 	width: 48px;
 }
 
-/*=========================================
-Post List
-=========================================== */
-#post-list,#archive-list {
-	margin-top: 60px;
-}
-
-#post-list li,#archive-list li {
-	list-style-type: none;
-}
-
-#post-list li:last-child {
-	margin-bottom: 0;
-}
-
-#post-list li+li {
-	padding-top: 20px;
-	border-top: 1px solid #eee;
-}
-
-#post-list a {
-	color: #333;
-	display: block;
-	font: bold 19px/1.7 "Helvetica Neue",helvetica,Arial,sans-serif;
-}
-
-#post-list .dates {
-	float: right;
-	position: relative;
-	top: 1px;
-	font: 300 17px/1.8 "Helvetica Neue",helvetica,Arial,sans-serif;
-	color: #bbb;
-}
-
-#post-list-footer {
-	border-top: 1px solid #eee;
-	margin-top: 20px;
-	padding-top: 100px;
-}
-
 #archive-link {
 	display: inline-block;
 	font-size: 13px;
@@ -417,11 +285,6 @@ Post List
 	font-size: 17px;
 }
 
-#footer {
-	box-shadow: inset 0 1px 0 #eee;
-	padding: 40px 0 0 0;
-	margin-top: 60px;
-}
 
 /* Post Page */
 #header {
@@ -535,7 +398,7 @@ h1.archive {
 
 h2.month {
 	width: 100%;
-	font: bold 13px/1 "Helvetica Neue",helvetica,Arial,sans-serif;
+	font: bold 13px/1;
 	text-transform: uppercase;
 	margin-top: 40px;
 	margin-bottom: 10px;
@@ -549,7 +412,7 @@ h2.month {
 
 #archive-list a {
 	display: block;
-	font: bold 17px/1.7 "Helvetica Neue",helvetica,Arial,sans-serif;
+	font: bold 17px/1.7;
 	color: #333;
 }
 
@@ -557,7 +420,7 @@ h2.month {
 	float: right;
 	position: relative;
 	top: 1px;
-	font: 300 17px/1.7 "Helvetica Neue",helvetica,Arial,sans-serif;
+	font: 300 17px/1.7;
 	color: #bbb;
 }
 
@@ -573,24 +436,6 @@ h2.month {
 	margin-top: 3px;
 	margin-right: 20px;
 	box-shadow: 0 0 0 3px #fff, 0 0 0 4px #eee;
-}
-
-#post-list.archive.readmore h3{
-	font: 400 20px "Helvetica Neue", Helvetica,Arial,sans-serif;
-	margin-bottom: 30px;
-}
-
-#post-list.archive.readmore a{
-	font: 400 16px/1.6 "Helvetica Neue",helvetica,Arial,sans-serif;
-	color: #5694f1;
-}
-
-#post-list.archive.readmore a:hover{
-	opacity: 0.8;
-}
-
-#post-list.archive.readmore .dates{
-	font: 300 16px/1.6 "Helvetica Neue",helvetica,Arial,sans-serif;
 }
 
 #sharing a.facebook {
@@ -622,7 +467,7 @@ h2.month {
 	#post-meta { margin-top: 60px; }
 
 	#title { font-size: 17px; }
-	#post-list .dates { display: none; }
+	#post-list time { display: none; }
 
 	#post-list-footer { margin-top: 20px; padding-top: 40px; }
 
@@ -630,4 +475,140 @@ h2.month {
 	.post h2.headline { font-size: 13px; }
 	.post h1 { font-size:24px; }
 	.post h2 { font-size:20px; }
+}
+/* TODO: check above. */
+
+
+
+
+
+
+
+
+/* Main navigation at the top of the page. */
+nav.main-nav {
+	padding: 20px 20px 0;
+	text-align: right;
+}
+
+nav.main-nav a {
+	padding: 8px 12px;
+	font-size: 13px;
+}
+
+/* Profile shown on the index page. */
+header.profile {
+	padding: 100px 40px 40px;
+	max-width: 600px;
+	margin: 0 auto 40px auto;
+	border-bottom: 1px solid #eee;
+	text-align: center;
+	position: relative;
+}
+
+header.profile img {
+	display: inline-block;
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	margin-bottom: 20px;
+}
+
+header.profile h1 {
+	font-weight: 400;
+	letter-spacing: 0px;
+	font-size: 20px;
+	color: #222;
+}
+
+header.profile h2 {
+	font-size: 20px;
+	font-weight: 300;
+	color: #aaa;
+	margin-top: 10px;
+	font-style: normal;
+}
+
+/* Main section. */
+section, article {
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 60px 40px 40px 40px;
+}
+
+section.home {
+	/* Home page already has a large profile at the top of the page. */
+	padding: 0px 40px 20px 40px;
+}
+
+/* Footer shown at the bottom of the page. */
+footer {
+	padding-top: 20px;
+	margin: 20px auto;
+	max-width: 600px;
+	border-top: 1px solid #eee;
+	text-align: center;
+}
+
+footer p {
+	color: #bbb;
+	font-size: 14px;
+	line-height: 1.5;
+	display: block;
+}
+
+/* List of posts on home page. */
+#post-list li {
+	margin-bottom: 20px;
+}
+
+#post-list li h1 {
+	/*font: 700 19px/1.7;*/
+	margin-top: 2px;
+}
+
+#post-list li p {
+	/*font: normal 17px/1.5em;*/
+	color: #aaa;
+	margin-top: 2px;
+}
+
+#post-list a:hover,
+#post-list li:hover time {
+	text-decoration: none;
+	color: #5badf0;
+	color: #5694f1;
+}
+
+
+
+#post-list,#archive-list {
+	margin-top: 60px;
+}
+
+#post-list li,#archive-list li {
+	list-style-type: none;
+}
+
+#post-list li:last-child {
+	margin-bottom: 0;
+}
+
+#post-list li a {
+	color: #333;
+	display: block;
+	/*font: bold 19px/1.7;*/
+}
+
+#post-list li time {
+	float: right;
+	position: relative;
+	top: 1px;
+	/*font: 300 17px/1.8;*/
+	color: #bbb;
+}
+
+/* Padding to highlighting. */
+.highlight {
+	margin-bottom: 20px;
 }
