@@ -24,7 +24,7 @@ disableKinds = [ "section", "taxonomy", "term", "RSS", "sitemap", "robotsTXT" ]
 
 [markup]
   [markup.highlight]
-    anchorLineNos = true
+    anchorLineNos = false
     codeFences = true
     guessSyntax = false
     lineNoStart = 1
