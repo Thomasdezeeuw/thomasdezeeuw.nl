@@ -1,17 +1,10 @@
-build: clean build_pages build_css
-
-build_dev: build_css
-	hugo --buildDrafts --buildFuture
-
-build_pages:
-	hugo
+build: clean
+	hugo --minify
 	@# Remove some files we don't want.
 	rm -rf public/page
 
-# Build CSS.
-build_css: public/style.css
-public/style.css: src/css/normalize.css src/css/highlight.css src/css/main.css
-	cat $^ > $@
+build_dev:
+	hugo --buildDrafts --buildFuture
 
 dev:
 	find content/ src/ static/ themes/ config.toml Makefile | entr -d $(MAKE) build_dev
@@ -19,4 +12,4 @@ dev:
 clean:
 	rm -rf public
 
-.PHONY: build build_dev build_pages build_css dev clean
+.PHONY: build build_dev dev clean

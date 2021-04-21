@@ -3,5 +3,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="author" content="{{ .Site.Params.name }}">
 		<title>{{ if ne .Title .Site.Title }}{{ .Title }} &middot; {{ end }}{{ .Site.Title }}</title>
-		<link rel="stylesheet" href="/style.css">
+		{{ $normalize := resources.Get "css/normalize.css" | toCSS }}
+		{{ $highlight := resources.Get "css/highlight.css" | toCSS }}
+		{{ $main      := resources.Get "css/main.css"      | toCSS }}
+		{{ $css   := slice $normalize $highlight $main | resources.Concat "style.css" }}
+		{{ $style := $css | minify | fingerprint }}
+		<link rel="stylesheet" href="{{ $style.RelPermalink }}">
 	</head>
