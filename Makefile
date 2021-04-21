@@ -1,7 +1,7 @@
 build: clean build_pages build_css
 
 build_dev: build_css
-	hugo  --buildDrafts --buildFuture
+	hugo --buildDrafts --buildFuture
 
 build_pages:
 	hugo
@@ -11,7 +11,6 @@ build_pages:
 # Build CSS.
 build_css: public/style.css
 public/style.css: src/css/normalize.css src/css/highlight.css src/css/main.css
-	mkdir -p public/css
 	cat $^ > $@
 
 dev:
