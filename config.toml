@@ -20,7 +20,7 @@ disableKinds = [ "section", "taxonomy", "term", "RSS", "sitemap", "robotsTXT" ]
   # RSS feed link.
   enableRSS = false
   # Copyright message in the footer.
-  copyright = "© Copyright 2015-2021 Thomas de Zeeuw"
+  copyright = "© Copyright 2015-2022 Thomas de Zeeuw"
 
 [markup]
   [markup.highlight]
