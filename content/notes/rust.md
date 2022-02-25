@@ -7,7 +7,7 @@ Collections of notes about the [Rust programming language].
 
 [Rust programming language]: https://rust-lang.org
 
-# Release flags and options
+# Release Flags and Options
 
 Release profile (in `Cargo.toml`).
 
