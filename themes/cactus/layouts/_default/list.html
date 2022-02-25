@@ -5,8 +5,17 @@
 {{ partial "nav.html" . }}
 
 		<section>
-{{ partial "post-list.html"  . }}
-{{ partial "pagination.html" . }}
+			<h1>{{ .Title }}</h1>
+{{ .Content }}
+			{{- range .Paginator.Pages -}}
+			<ul>
+				{{ if ne .Type "blog-post" }}
+				<li>
+					<a href='{{ .RelPermalink }}'>{{ .LinkTitle }}</a>
+				</li>
+				{{- end }}
+			</ul>
+			{{- end }}
 		</section>
 
 {{ partial "footer.html" . }}

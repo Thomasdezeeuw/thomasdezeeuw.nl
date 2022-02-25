@@ -1,5 +1,5 @@
+			{{- range .Paginator.Pages -}}
 			<ul>
-				{{- range .Paginator.Pages -}}
 				{{ if eq .Type "blog-post" }}
 				<li>
 					<a href='{{ .RelPermalink }}'>
@@ -11,5 +11,5 @@
 					</a>
 				</li>
 				{{- end }}
-				{{- end }}
 			</ul>
+			{{- end }}
