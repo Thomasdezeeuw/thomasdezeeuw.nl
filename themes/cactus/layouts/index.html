@@ -5,7 +5,36 @@
 {{ partial "nav.html" . }}
 {{ partial "profile.html" . }}
 		<section class="home">
-{{ partial "post-list.html"  . }}
+			<ul class="posts">
+				{{- range .Paginator.Pages -}}
+				{{ if eq .Type "blog-post" }}
+				<li>
+					<a href='{{ .RelPermalink }}'>
+						<em>{{ .Title }}</em>
+						<time datetime="{{ .PublishDate.Format "2006-01-02" }}">
+							{{- .PublishDate.Format "Jan 2, 2006" -}}
+						</time>
+						<p>{{ .Description }}</p>
+					</a>
+				</li>
+				{{- end }}
+				{{- end }}
+			</ul>
+
+			<ul class="pages">
+				{{- range .Sections -}}
+				{{ if eq .Type "page" }}
+				<li>
+					<a href='{{ .RelPermalink }}'>
+						<p>
+							<em>{{ .LinkTitle }}</em>
+							{{- .Description -}}
+						</p>
+					</a>
+				</li>
+				{{- end }}
+				{{- end }}
+			</ul>
 		</section>
 
 {{ partial "footer.html" . }}
