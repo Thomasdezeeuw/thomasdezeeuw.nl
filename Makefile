@@ -7,6 +7,6 @@ dev:
 	hugo server --buildDrafts --buildFuture
 
 clean:
-	rm -rf public
+	rm -rf public resources
 
 .PHONY: build dev clean
