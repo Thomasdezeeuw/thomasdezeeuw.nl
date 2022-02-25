@@ -1,6 +1,6 @@
 			{{- range .Paginator.Pages -}}
+			{{ if eq .Type "blog-post" }}
 			<ul>
-				{{ if eq .Type "blog-post" }}
 				<li>
 					<a href='{{ .RelPermalink }}'>
 						<h1>{{ .Title }}</h1>
@@ -10,6 +10,6 @@
 						<p>{{ .Description }}</p>
 					</a>
 				</li>
-				{{- end }}
 			</ul>
+			{{- end }}
 			{{- end }}
