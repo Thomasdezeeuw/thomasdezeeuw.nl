@@ -2,7 +2,7 @@
 			{{- if not .IsHome }}
 			<a href="/">← Home</a>
 			{{- $parent := .Parent }}
-			{{- if (and (.Parent) (not $parent.IsHome)) }}
+			{{- if (and (.Parent) (not $parent.IsHome) (ne .Type "blog-post")) }}
 			<span>/</span>
 			<a href='{{ $parent.RelPermalink }}'>
 				{{- $parent.LinkTitle -}}
