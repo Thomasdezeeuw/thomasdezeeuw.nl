@@ -112,8 +112,17 @@ nav.main-nav {
 }
 
 nav.main-nav a {
-	padding: 8px 12px;
+	padding: 1px 0.125rem;
 	font-size: 13px;
+}
+
+nav.main-nav a.last {
+	color: #b2b9be;
+}
+
+nav.main-nav span {
+	padding-left: 0.25rem;
+	padding-right: 0.25rem;
 }
 
 /* Profile shown on the home page. */

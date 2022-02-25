@@ -1,6 +1,7 @@
 +++
 type = "page"
-title = "Go notes"
+title = "Go Notes"
+linktitle = "Go"
 +++
 
 This is a collection tricks, ideas and other fun stuff I've collected in my time

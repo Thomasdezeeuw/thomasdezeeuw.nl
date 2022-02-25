@@ -1,6 +1,7 @@
 +++
 type = "page"
-title = "Git notes"
+title = "Git Notes"
+linktitle = "Git"
 +++
 
 Collection of commands that are useful when using [git], but I always seem to

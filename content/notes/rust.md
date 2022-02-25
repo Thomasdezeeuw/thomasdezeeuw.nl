@@ -1,6 +1,7 @@
 +++
 type = "page"
-title = "Rust notes"
+title = "Rust Notes"
+linktitle = "Rust"
 +++
 
 Collections of notes about the [Rust programming language].

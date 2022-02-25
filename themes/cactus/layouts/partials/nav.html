@@ -1,8 +1,20 @@
 		<nav class="main-nav">
-			{{- $url := replace .Permalink .Site.BaseURL "" }}
-			{{- if ne $url "/" }}
+			{{- if not .IsHome }}
 			<a href="/">← Home</a>
+			{{- $parent := .Parent }}
+			{{- if (and (.Parent) (not $parent.IsHome)) }}
+			<span>/</span>
+			<a href='{{ $parent.RelPermalink }}'>
+				{{- $parent.LinkTitle -}}
+			</a>
 			{{- end }}
+			<span>/</span>
+			<a href='{{ .RelPermalink }}' class="last">
+				{{- .LinkTitle -}}
+			</a>
+			<span>—</span>
+			{{- end }}
+
 			{{- range .Site.Params.links }}
 			<a href="{{index . 1}}">{{index . 0}}</a>
 			{{- end }}
