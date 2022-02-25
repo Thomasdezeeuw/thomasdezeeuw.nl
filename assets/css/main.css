@@ -3,7 +3,7 @@
 body {
 	line-height: 1;
 	/* Use the system native font. */
-	font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+	font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 	color: #666;
 	text-rendering: optimizeLegibility;
 }
@@ -61,12 +61,17 @@ a:active {
 	text-decoration: underline;
 }
 
+/* Add some spacing to lists. */
+ul {
+	padding-inline-start: 30px;
+}
+
 /* Inline code. */
 p code {
 	padding: 0 0.1em;
 	background-color: #F5F5F5;
 	border-radius: 3px;
-	font-family: 'Source Code Pro',SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
+	font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 /* Center the first header of the page. */
@@ -208,10 +213,9 @@ section.home a:active time {
 }
 
 .highlight .chroma {
-	white-space: pre-wrap;
-	padding-left: 5px;
+	padding: 5px;
 	overflow: auto;
 	border-radius: 3px;
-	font-family: 'Source Code Pro',SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
+	font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 	line-height: 1.2;
 }
