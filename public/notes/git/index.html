@@ -1,0 +1,104 @@
+<!doctype html><html lang=en-us>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=author content="Thomas de Zeeuw">
+<title>Git Notes &#183; Thomas de Zeeuw</title>
+<link rel=stylesheet href=/style.min.ee1b345b5d45668dd2815d19eda4a748576ecaf57fa1d87d2fa4d793e4188758.css>
+</head>
+<body>
+<nav class=main-nav>
+<a href=/>← Home</a>
+<span>/</span>
+<a href=/notes/>Notes</a>
+<span>/</span>
+<a href=/notes/git/ class=last>Git</a>
+<span>—</span>
+<a href=https://github.com/Thomasdezeeuw>GitHub page</a>
+</nav>
+<article>
+<h1>Git Notes</h1>
+<p>Collection of commands that are useful when using <a href=https://git-scm.com>git</a>, but I always seem to
+forget.</p>
+<h1 id=update-branch>Update Branch</h1>
+<p>Update your branch appending your (not yet merged) commits on top of the
+changes.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>git fetch
+git rebase &lt;remote&gt;/&lt;branch&gt;
+</code></pre></td></tr></table>
+</div>
+</div><h1 id=remove-remote-branch>Remove Remote Branch</h1>
+<p>First remove the branch locally, then remotely.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>git branch -d &lt;branch&gt; <span class=c1># -D to force remove.</span>
+git push &lt;remote&gt; --delete &lt;branch&gt;
+</code></pre></td></tr></table>
+</div>
+</div><h1 id=list-commits-added-in-different-branch>List commits added in different branch</h1>
+<p>List all commits in <code>other_branch</code> not in the master branch.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>git log HEAD..other_branch
+</code></pre></td></tr></table>
+</div>
+</div><p>Also show the actual changes.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>git log --patch HEAD..other_branch
+</code></pre></td></tr></table>
+</div>
+</div><h1 id=last-commit>Last Commit</h1>
+<p>Last commit.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>git log -1 HEAD
+git log -1 HEAD --patch <span class=c1># With changes.</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Only the commit hash.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>git rev-parse HEAD
+</code></pre></td></tr></table>
+</div>
+</div><h1 id=cleaup>Cleaup</h1>
+<p>Reduce disk space by packing objects.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>git gc --aggressive
+</code></pre></td></tr></table>
+</div>
+</div>
+</article>
+<footer id=footer>
+<p class=small>© Copyright 2015-2022 Thomas de Zeeuw</p>
+</footer>
+</body>
+</html>
