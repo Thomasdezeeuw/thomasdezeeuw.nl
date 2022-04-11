@@ -22,7 +22,7 @@ audio,video {
 }
 
 /* Main page content. */
-section, article {
+section.home, article {
 	margin: 0 auto;
 	margin-top: 2.5em;
 	padding: 2.5em 1em;
@@ -81,7 +81,7 @@ p code {
 }
 
 /* Center the first header of the page. */
-section h1:first-child, article h1:first-child {
+section.home h1:first-child, article h1:first-child {
 	letter-spacing: -1px;
 	text-align: center;
 	margin-top: 0px;
@@ -100,7 +100,7 @@ article time {
 }
 
 /* bit more spacing for the text. */
-section p, article p, article ul {
+section.home p, article p, article ul {
 	line-height: 1.5;
 	margin-bottom: 1em;
 }
@@ -249,6 +249,15 @@ section.home a:active em,
 section.home a:active time {
 	color: #5694f1; /* Blue. */
 	text-decoration: none;
+}
+
+section {
+	padding: 1em;
+}
+
+section.footnotes hr {
+	width: 40%;
+	margin-left: 0;
 }
 
 /* Highlighted code. */
