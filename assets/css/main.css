@@ -23,8 +23,9 @@ audio,video {
 
 /* Main page content. */
 section, article {
-	margin: 40px auto;
-	padding: 40px 0;
+	margin: 0 auto;
+	margin-top: 2.5em;
+	padding: 2.5em 1em;
 	max-width: 52rem;
 }
 
@@ -63,7 +64,12 @@ a:active {
 
 /* Add some spacing to lists. */
 ul {
-	padding-inline-start: 30px;
+	padding-inline-start: 1em;
+	list-style-position: inside;
+}
+
+ol {
+	padding-inline-start: 1em;
 }
 
 /* Inline code. */
@@ -94,9 +100,9 @@ article time {
 }
 
 /* bit more spacing for the text. */
-section p, article p {
+section p, article p, article ul {
 	line-height: 1.5;
-	margin-bottom: 20px;
+	margin-bottom: 1em;
 }
 
 /* Smaller and lighter-grey text in the footer. */
