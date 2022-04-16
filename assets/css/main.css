@@ -99,7 +99,7 @@ article time {
 	text-align: center;
 }
 
-/* bit more spacing for the text. */
+/* Bit more spacing for the text. */
 section.home p, article p, article ul {
 	line-height: 1.5;
 	margin-bottom: 1em;
@@ -258,6 +258,10 @@ section {
 section.footnotes hr {
 	width: 40%;
 	margin-left: 0;
+}
+
+article a {
+	text-decoration: underline;
 }
 
 /* Highlighted code. */
