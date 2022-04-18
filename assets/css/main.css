@@ -21,7 +21,7 @@ audio,video {
 }
 
 /* Main page content. */
-section.home, article {
+section.home, article, body section {
 	margin: 0 auto;
 	margin-top: 2.5em;
 	padding: 2.5em 1em;
