@@ -1,29 +1,10 @@
-<!doctype html><html lang=en-us>
-<head>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=author content="Thomas de Zeeuw">
-<title>Rust Notes &#183; Thomas de Zeeuw</title>
-<link rel=stylesheet href=/style.min.8dc0257c4443ed383caefd0cc384ffab78ae08db8e5a712ba784b984a06c68a7.css>
-</head>
-<body>
-<nav class=main-nav>
-<a href=/>← Home</a>
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=author content="Thomas de Zeeuw"><title>Rust Notes &#183; Thomas de Zeeuw</title><link rel=stylesheet href=/style.min.b424797a46d6ab1de7cfd756624b3e342f88340538af830a9342ddda76b3db65.css></head><body><nav class=main-nav><a href=/>← Home</a>
 <span>/</span>
 <a href=/notes/>Notes</a>
 <span>/</span>
 <a href=/notes/rust/ class=last>Rust</a>
 <span>—</span>
-<a href=https://github.com/Thomasdezeeuw>GitHub page</a>
-</nav>
-<article>
-<h1>Rust Notes</h1>
-<p>Collections of notes about the <a href=https://rust-lang.org>Rust programming language</a>.</p>
-<h1 id=release-flags-and-options>Release Flags and Options</h1>
-<p>Release profile (in <code>Cargo.toml</code>).</p>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt> 1
+<a href=https://github.com/Thomasdezeeuw>GitHub page</a></nav><article><h1>Rust Notes</h1><p>Collections of notes about the <a href=https://rust-lang.org>Rust programming language</a>.</p><h1 id=release-flags-and-options>Release Flags and Options</h1><p>Release profile (in <code>Cargo.toml</code>).</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -34,71 +15,34 @@
 </span><span class=lnt> 9
 </span><span class=lnt>10
 </span><span class=lnt>11
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-toml data-lang=toml><span class=p>[</span><span class=nx>profile</span><span class=p>.</span><span class=nx>release</span><span class=p>]</span>
-<span class=nx>opt-level</span>        <span class=p>=</span> <span class=mi>3</span>
-<span class=nx>strip</span>            <span class=p>=</span> <span class=s2>&#34;symbols&#34;</span>
-<span class=nx>debug</span>            <span class=p>=</span> <span class=kc>false</span>
-<span class=nx>debug-assertions</span> <span class=p>=</span> <span class=kc>false</span>
-<span class=nx>overflow-checks</span>  <span class=p>=</span> <span class=kc>false</span>
-<span class=nx>lto</span>              <span class=p>=</span> <span class=s2>&#34;fat&#34;</span>
-<span class=nx>panic</span>            <span class=p>=</span> <span class=s2>&#34;unwind&#34;</span>
-<span class=nx>incremental</span>      <span class=p>=</span> <span class=kc>false</span>
-<span class=nx>codegen-units</span>    <span class=p>=</span> <span class=mi>1</span>
-<span class=nx>rpath</span>            <span class=p>=</span> <span class=kc>false</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>See the <a href=https://doc.rust-lang.org/cargo/reference/profiles.html>documentation</a> for information about each setting.</p>
-<p>Compilation flags.</p>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-toml data-lang=toml><span class=line><span class=cl><span class=p>[</span><span class=nx>profile</span><span class=p>.</span><span class=nx>release</span><span class=p>]</span>
+</span></span><span class=line><span class=cl><span class=nx>opt-level</span>        <span class=p>=</span> <span class=mi>3</span>
+</span></span><span class=line><span class=cl><span class=nx>strip</span>            <span class=p>=</span> <span class=s2>&#34;symbols&#34;</span>
+</span></span><span class=line><span class=cl><span class=nx>debug</span>            <span class=p>=</span> <span class=kc>false</span>
+</span></span><span class=line><span class=cl><span class=nx>debug-assertions</span> <span class=p>=</span> <span class=kc>false</span>
+</span></span><span class=line><span class=cl><span class=nx>overflow-checks</span>  <span class=p>=</span> <span class=kc>false</span>
+</span></span><span class=line><span class=cl><span class=nx>lto</span>              <span class=p>=</span> <span class=s2>&#34;fat&#34;</span>
+</span></span><span class=line><span class=cl><span class=nx>panic</span>            <span class=p>=</span> <span class=s2>&#34;unwind&#34;</span>
+</span></span><span class=line><span class=cl><span class=nx>incremental</span>      <span class=p>=</span> <span class=kc>false</span>
+</span></span><span class=line><span class=cl><span class=nx>codegen-units</span>    <span class=p>=</span> <span class=mi>1</span>
+</span></span><span class=line><span class=cl><span class=nx>rpath</span>            <span class=p>=</span> <span class=kc>false</span>
+</span></span></code></pre></td></tr></table></div></div><p>See the <a href=https://doc.rust-lang.org/cargo/reference/profiles.html>documentation</a> for information about each setting.</p><p>Compilation flags.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=nv>MACOSX_DEPLOYMENT_TARGET</span><span class=o>=</span><span class=k>$(</span>sw_vers -productVersion<span class=k>)</span> <span class=se>\
-</span><span class=se></span>	<span class=nv>RUSTFLAGS</span><span class=o>=</span><span class=s2>&#34;-C target-cpu=native&#34;</span> <span class=se>\
-</span><span class=se></span>	cargo build --release
-</code></pre></td></tr></table>
-</div>
-</div><p>Flags:</p>
-<ul>
-<li><code>MACOSX_DEPLOYMENT_TARGET</code> (macOS only) optimises for the macOS version.</li>
-<li><code>-C target-cpu=native</code> optimises the compiled code for the CPU.</li>
-</ul>
-<h1 id=rustdoc>Rustdoc</h1>
-<p>Documenting private types.</p>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>cargo doc --document-private-items
-</code></pre></td></tr></table>
-</div>
-</div><h1 id=sanitizers>Sanitizers</h1>
-<p>See <a href=https://github.com/japaric/rust-san>https://github.com/japaric/rust-san</a> and the <a href=https://doc.rust-lang.org/nightly/unstable-book/compiler-flags/sanitizer.html>documentation</a>.</p>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=nv>MACOSX_DEPLOYMENT_TARGET</span><span class=o>=</span><span class=k>$(</span>sw_vers -productVersion<span class=k>)</span> <span class=se>\
+</span></span></span><span class=line><span class=cl><span class=se></span>	<span class=nv>RUSTFLAGS</span><span class=o>=</span><span class=s2>&#34;-C target-cpu=native&#34;</span> <span class=se>\
+</span></span></span><span class=line><span class=cl><span class=se></span>	cargo build --release
+</span></span></code></pre></td></tr></table></div></div><p>Flags:</p><ul><li><code>MACOSX_DEPLOYMENT_TARGET</code> (macOS only) optimises for the macOS version.</li><li><code>-C target-cpu=native</code> optimises the compiled code for the CPU.</li></ul><h1 id=rustdoc>Rustdoc</h1><p>Documenting private types.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>cargo doc --document-private-items
+</span></span></code></pre></td></tr></table></div></div><h1 id=sanitizers>Sanitizers</h1><p>See <a href=https://github.com/japaric/rust-san>https://github.com/japaric/rust-san</a> and the <a href=https://doc.rust-lang.org/nightly/unstable-book/compiler-flags/sanitizer.html>documentation</a>.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=nv>RUSTFLAGS</span><span class=o>=</span><span class=s2>&#34;-Z sanitizer=leak&#34;</span>    cargo <span class=nb>test</span> --all-features --target x86_64-unknown-linux-gnu
-<span class=nv>RUSTFLAGS</span><span class=o>=</span><span class=s2>&#34;-Z sanitizer=address&#34;</span> cargo <span class=nb>test</span> --all-features --target x86_64-unknown-linux-gnu
-<span class=nv>RUSTFLAGS</span><span class=o>=</span><span class=s2>&#34;-Z sanitizer=memory&#34;</span>  cargo <span class=nb>test</span> --all-features --target x86_64-unknown-linux-gnu
-<span class=nv>RUSTFLAGS</span><span class=o>=</span><span class=s2>&#34;-Z sanitizer=thread&#34;</span>  cargo <span class=nb>test</span> --all-features --target x86_64-unknown-linux-gnu
-</code></pre></td></tr></table>
-</div>
-</div><h1 id=a-makefile-for-rust>A Makefile for Rust</h1>
-<p>Also see the <a href=https://github.com/Thomasdezeeuw/heph/blob/master/Makefile>latest version</a> used in <a href=https://github.com/Thomasdezeeuw/heph>Heph</a>.</p>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=nv>RUSTFLAGS</span><span class=o>=</span><span class=s2>&#34;-Z sanitizer=leak&#34;</span>    cargo <span class=nb>test</span> --all-features --target x86_64-unknown-linux-gnu
+</span></span><span class=line><span class=cl><span class=nv>RUSTFLAGS</span><span class=o>=</span><span class=s2>&#34;-Z sanitizer=address&#34;</span> cargo <span class=nb>test</span> --all-features --target x86_64-unknown-linux-gnu
+</span></span><span class=line><span class=cl><span class=nv>RUSTFLAGS</span><span class=o>=</span><span class=s2>&#34;-Z sanitizer=memory&#34;</span>  cargo <span class=nb>test</span> --all-features --target x86_64-unknown-linux-gnu
+</span></span><span class=line><span class=cl><span class=nv>RUSTFLAGS</span><span class=o>=</span><span class=s2>&#34;-Z sanitizer=thread&#34;</span>  cargo <span class=nb>test</span> --all-features --target x86_64-unknown-linux-gnu
+</span></span></code></pre></td></tr></table></div></div><h1 id=a-makefile-for-rust>A Makefile for Rust</h1><p>Also see the <a href=https://github.com/Thomasdezeeuw/heph/blob/master/Makefile>latest version</a> used in <a href=https://github.com/Thomasdezeeuw/heph>Heph</a>.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -135,51 +79,41 @@
 </span><span class=lnt>35
 </span><span class=lnt>36
 </span><span class=lnt>37
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-make data-lang=make><span class=c># Targets available via Rustup that are supported.
-</span><span class=c></span><span class=nv>TARGETS</span> <span class=o>?=</span> x86_64-apple-darwin x86_64-unknown-linux-gnu x86_64-unknown-freebsd
-<span class=c># Command to run in `dev` target, e.g. `make RUN=check dev`.
-</span><span class=c></span><span class=nv>RUN</span> <span class=o>?=</span> <span class=nb>test</span>
-
-<span class=nf>test</span><span class=o>:</span>
-	cargo <span class=nb>test</span>
-
-<span class=nf>check</span><span class=o>:</span>
-	cargo check --all-features --all-targets
-
-<span class=nf>check_all_targets</span><span class=o>:</span> <span class=k>$(</span><span class=nv>TARGETS</span><span class=k>)</span>
-<span class=nf>$(TARGETS)</span><span class=o>:</span>
-	cargo check --all-features --workspace --all-targets --target <span class=nv>$@</span>
-
-<span class=c># NOTE: when using this command you might want to change the `test` target to
-</span><span class=c># only run a subset of the tests you&#39;re actively working on.
-</span><span class=c></span><span class=nf>dev</span><span class=o>:</span>
-	find src/ tests/ examples/ Makefile Cargo.toml <span class=p>|</span> entr -d -c <span class=k>$(</span>MAKE<span class=k>)</span> <span class=k>$(</span>RUN<span class=k>)</span>
-
-<span class=nf>clippy</span><span class=o>:</span> <span class=n>lint</span>
-<span class=nf>lint</span><span class=o>:</span>
-	cargo clippy --all-features
-
-<span class=nf>install_clippy</span><span class=o>:</span>
-	rustup component add clippy
-
-<span class=nf>doc</span><span class=o>:</span>
-	cargo doc --all-features
-
-<span class=nf>doc_private</span><span class=o>:</span>
-	cargo doc --all-features --document-private-items
-
-<span class=nf>clean</span><span class=o>:</span>
-	cargo clean
-
-<span class=nf>.PHONY</span><span class=o>:</span> <span class=n>test</span> <span class=n>check</span> <span class=n>check_all</span> <span class=n>check_all_targets</span> <span class=n>dev</span> <span class=n>clippy</span> <span class=n>lint</span> <span class=n>install_clippy</span> <span class=n>doc</span> <span class=n>doc_private</span> <span class=n>clean</span>
-</code></pre></td></tr></table>
-</div>
-</div>
-</article>
-<footer id=footer>
-<p class=small>© Copyright 2015-2022 Thomas de Zeeuw</p>
-</footer>
-</body>
-</html>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-make data-lang=make><span class=line><span class=cl><span class=c># Targets available via Rustup that are supported.
+</span></span></span><span class=line><span class=cl><span class=c></span><span class=nv>TARGETS</span> <span class=o>?=</span> x86_64-apple-darwin x86_64-unknown-linux-gnu x86_64-unknown-freebsd
+</span></span><span class=line><span class=cl><span class=c># Command to run in `dev` target, e.g. `make RUN=check dev`.
+</span></span></span><span class=line><span class=cl><span class=c></span><span class=nv>RUN</span> <span class=o>?=</span> <span class=nb>test</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nf>test</span><span class=o>:</span>
+</span></span><span class=line><span class=cl>	cargo <span class=nb>test</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nf>check</span><span class=o>:</span>
+</span></span><span class=line><span class=cl>	cargo check --all-features --all-targets
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nf>check_all_targets</span><span class=o>:</span> <span class=k>$(</span><span class=nv>TARGETS</span><span class=k>)</span>
+</span></span><span class=line><span class=cl><span class=nf>$(TARGETS)</span><span class=o>:</span>
+</span></span><span class=line><span class=cl>	cargo check --all-features --workspace --all-targets --target <span class=nv>$@</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c># NOTE: when using this command you might want to change the `test` target to
+</span></span></span><span class=line><span class=cl><span class=c># only run a subset of the tests you&#39;re actively working on.
+</span></span></span><span class=line><span class=cl><span class=c></span><span class=nf>dev</span><span class=o>:</span>
+</span></span><span class=line><span class=cl>	find src/ tests/ examples/ Makefile Cargo.toml <span class=p>|</span> entr -d -c <span class=k>$(</span>MAKE<span class=k>)</span> <span class=k>$(</span>RUN<span class=k>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nf>clippy</span><span class=o>:</span> <span class=n>lint</span>
+</span></span><span class=line><span class=cl><span class=nf>lint</span><span class=o>:</span>
+</span></span><span class=line><span class=cl>	cargo clippy --all-features
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nf>install_clippy</span><span class=o>:</span>
+</span></span><span class=line><span class=cl>	rustup component add clippy
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nf>doc</span><span class=o>:</span>
+</span></span><span class=line><span class=cl>	cargo doc --all-features
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nf>doc_private</span><span class=o>:</span>
+</span></span><span class=line><span class=cl>	cargo doc --all-features --document-private-items
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nf>clean</span><span class=o>:</span>
+</span></span><span class=line><span class=cl>	cargo clean
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nf>.PHONY</span><span class=o>:</span> <span class=n>test</span> <span class=n>check</span> <span class=n>check_all</span> <span class=n>check_all_targets</span> <span class=n>dev</span> <span class=n>clippy</span> <span class=n>lint</span> <span class=n>install_clippy</span> <span class=n>doc</span> <span class=n>doc_private</span> <span class=n>clean</span>
+</span></span></code></pre></td></tr></table></div></div></article><footer id=footer><p class=small>© Copyright 2015-2023 Thomas de Zeeuw</p></footer></body></html>

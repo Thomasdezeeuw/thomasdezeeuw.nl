@@ -11,16 +11,15 @@ disableKinds = [ "taxonomy", "term", "RSS", "sitemap", "robotsTXT" ]
 
 [params]
   name = "Thomas de Zeeuw"
-  bio = "Software enthusiast"
+  bio = "Software Engineer"
   # Links in the header.
   links = [
-  	["GitHub page", "https://github.com/Thomasdezeeuw"],
-  	#["Go notes", "/notes/go"],
+    ["GitHub page", "https://github.com/Thomasdezeeuw"],
   ]
   # RSS feed link.
   enableRSS = false
   # Copyright message in the footer.
-  copyright = "© Copyright 2015-2022 Thomas de Zeeuw"
+  copyright = "© Copyright 2015-2023 Thomas de Zeeuw"
 
 [markup]
   [markup.highlight]

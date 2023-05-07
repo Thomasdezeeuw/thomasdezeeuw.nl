@@ -1,121 +1,50 @@
-<!doctype html><html lang=en-us>
-<head>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=author content="Thomas de Zeeuw">
-<title>Go Notes &#183; Thomas de Zeeuw</title>
-<link rel=stylesheet href=/style.min.8dc0257c4443ed383caefd0cc384ffab78ae08db8e5a712ba784b984a06c68a7.css>
-</head>
-<body>
-<nav class=main-nav>
-<a href=/>← Home</a>
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=author content="Thomas de Zeeuw"><title>Go Notes &#183; Thomas de Zeeuw</title><link rel=stylesheet href=/style.min.b424797a46d6ab1de7cfd756624b3e342f88340538af830a9342ddda76b3db65.css></head><body><nav class=main-nav><a href=/>← Home</a>
 <span>/</span>
 <a href=/notes/>Notes</a>
 <span>/</span>
 <a href=/notes/go/ class=last>Go</a>
 <span>—</span>
-<a href=https://github.com/Thomasdezeeuw>GitHub page</a>
-</nav>
-<article>
-<h1>Go Notes</h1>
-<p>This is a collection tricks, ideas and other fun stuff I&rsquo;ve collected in my time
-programming in <a href=https://golang.org>go</a>.</p>
-<h1 id=code-coverage>Code Coverage</h1>
-<p>Get coverage and display it in a browser HTML.</p>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+<a href=https://github.com/Thomasdezeeuw>GitHub page</a></nav><article><h1>Go Notes</h1><p>This is a collection tricks, ideas and other fun stuff I&rsquo;ve collected in my time
+programming in <a href=https://golang.org>go</a>.</p><h1 id=code-coverage>Code Coverage</h1><p>Get coverage and display it in a browser HTML.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>go <span class=nb>test</span> -coverprofile cover.out
-go tool cover -html cover.out
-</code></pre></td></tr></table>
-</div>
-</div><h1 id=cross-platform-compiling>Cross Platform Compiling</h1>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=nv>GOOS</span><span class=o>=</span><span class=nv>$OS</span> <span class=nv>GOARCH</span><span class=o>=</span><span class=nv>$ARCH</span> go build -i -o app_<span class=nv>$OS_$ARCH</span>
-</code></pre></td></tr></table>
-</div>
-</div><h1 id=building-static-binaries>Building Static Binaries</h1>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>go <span class=nb>test</span> -coverprofile cover.out
+</span></span><span class=line><span class=cl>go tool cover -html cover.out
+</span></span></code></pre></td></tr></table></div></div><h1 id=cross-platform-compiling>Cross Platform Compiling</h1><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=nv>GOOS</span><span class=o>=</span><span class=nv>$OS</span> <span class=nv>GOARCH</span><span class=o>=</span><span class=nv>$ARCH</span> go build -i -o app_<span class=nv>$OS_$ARCH</span>
+</span></span></code></pre></td></tr></table></div></div><h1 id=building-static-binaries>Building Static Binaries</h1><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
 </span><span class=lnt>5
 </span><span class=lnt>6
 </span><span class=lnt>7
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=nv>CGO_ENABLED</span><span class=o>=</span><span class=m>0</span> go build -a -installsuffix cgo -ldflags <span class=s1>&#39;-s&#39;</span>
-
-<span class=c1># For Raspberry Pi 1</span>
-<span class=nv>CGO_ENABLED</span><span class=o>=</span><span class=m>0</span> <span class=nv>GOOS</span><span class=o>=</span>linux <span class=nv>GOARCH</span><span class=o>=</span>arm <span class=nv>GOARM</span><span class=o>=</span><span class=m>6</span> go build -a -installsuffix cgo -ldflags <span class=s1>&#39;-s&#39;</span>
-
-<span class=c1># For Raspberry Pi 2</span>
-<span class=nv>CGO_ENABLED</span><span class=o>=</span><span class=m>0</span> <span class=nv>GOOS</span><span class=o>=</span>linux <span class=nv>GOARCH</span><span class=o>=</span>arm <span class=nv>GOARM</span><span class=o>=</span><span class=m>7</span> go build -a -installsuffix cgo -ldflags <span class=s1>&#39;-s&#39;</span>
-</code></pre></td></tr></table>
-</div>
-</div><h1 id=list-imported-packages>List Imported Packages</h1>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=nv>CGO_ENABLED</span><span class=o>=</span><span class=m>0</span> go build -a -installsuffix cgo -ldflags <span class=s1>&#39;-s&#39;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># For Raspberry Pi 1</span>
+</span></span><span class=line><span class=cl><span class=nv>CGO_ENABLED</span><span class=o>=</span><span class=m>0</span> <span class=nv>GOOS</span><span class=o>=</span>linux <span class=nv>GOARCH</span><span class=o>=</span>arm <span class=nv>GOARM</span><span class=o>=</span><span class=m>6</span> go build -a -installsuffix cgo -ldflags <span class=s1>&#39;-s&#39;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># For Raspberry Pi 2</span>
+</span></span><span class=line><span class=cl><span class=nv>CGO_ENABLED</span><span class=o>=</span><span class=m>0</span> <span class=nv>GOOS</span><span class=o>=</span>linux <span class=nv>GOARCH</span><span class=o>=</span>arm <span class=nv>GOARM</span><span class=o>=</span><span class=m>7</span> go build -a -installsuffix cgo -ldflags <span class=s1>&#39;-s&#39;</span>
+</span></span></code></pre></td></tr></table></div></div><h1 id=list-imported-packages>List Imported Packages</h1><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
 </span><span class=lnt>5
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=c1># All packages including standard library</span>
-go list -f <span class=s1>&#39;{{join .Deps &#34;\n&#34;}}&#39;</span> <span class=p>|</span> xargs go list -f <span class=s1>&#39;{{.ImportPath}}&#39;</span>
-
-<span class=c1># Or all none standard library packages</span>
-go list -f <span class=s1>&#39;{{join .Deps &#34;\n&#34;}}&#39;</span> <span class=p>|</span> xargs go list -f <span class=s1>&#39;{{if not .Standard}}{{.ImportPath}}{{end}}&#39;</span>
-</code></pre></td></tr></table>
-</div>
-</div><h1 id=look-at-compiler-optimisations>Look at Compiler Optimisations</h1>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>go build -gcflags<span class=o>=</span>-m file.go
-</code></pre></td></tr></table>
-</div>
-</div><h1 id=escape-analysis-info>Escape Analysis Info</h1>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>go build -gcflags<span class=o>=</span><span class=s2>&#34;-m&#34;</span>
-</code></pre></td></tr></table>
-</div>
-</div><h1 id=profiling>Profiling</h1>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># All packages including standard library</span>
+</span></span><span class=line><span class=cl>go list -f <span class=s1>&#39;{{join .Deps &#34;\n&#34;}}&#39;</span> <span class=p>|</span> xargs go list -f <span class=s1>&#39;{{.ImportPath}}&#39;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Or all none standard library packages</span>
+</span></span><span class=line><span class=cl>go list -f <span class=s1>&#39;{{join .Deps &#34;\n&#34;}}&#39;</span> <span class=p>|</span> xargs go list -f <span class=s1>&#39;{{if not .Standard}}{{.ImportPath}}{{end}}&#39;</span>
+</span></span></code></pre></td></tr></table></div></div><h1 id=look-at-compiler-optimisations>Look at Compiler Optimisations</h1><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>go build -gcflags<span class=o>=</span>-m file.go
+</span></span></code></pre></td></tr></table></div></div><h1 id=escape-analysis-info>Escape Analysis Info</h1><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>go build -gcflags<span class=o>=</span><span class=s2>&#34;-m&#34;</span>
+</span></span></code></pre></td></tr></table></div></div><h1 id=profiling>Profiling</h1><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>go <span class=nb>test</span> -c <span class=c1># Compile the go test command to be run later</span>
-./<span class=nv>$NAME</span>.test -test.cpuprofile cpu.profile -test.memprofile mem.profile
-go tool pprof --pdf <span class=nv>$NAME</span>.test mem.profile &gt; mem.pdf
-go tool pprof --pdf <span class=nv>$NAME</span>.test cpu.profile &gt; cpu.pdf
-</code></pre></td></tr></table>
-</div>
-</div>
-</article>
-<footer id=footer>
-<p class=small>© Copyright 2015-2022 Thomas de Zeeuw</p>
-</footer>
-</body>
-</html>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>go <span class=nb>test</span> -c <span class=c1># Compile the go test command to be run later</span>
+</span></span><span class=line><span class=cl>./<span class=nv>$NAME</span>.test -test.cpuprofile cpu.profile -test.memprofile mem.profile
+</span></span><span class=line><span class=cl>go tool pprof --pdf <span class=nv>$NAME</span>.test mem.profile &gt; mem.pdf
+</span></span><span class=line><span class=cl>go tool pprof --pdf <span class=nv>$NAME</span>.test cpu.profile &gt; cpu.pdf
+</span></span></code></pre></td></tr></table></div></div></article><footer id=footer><p class=small>© Copyright 2015-2023 Thomas de Zeeuw</p></footer></body></html>
